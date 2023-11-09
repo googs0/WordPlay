@@ -1,5 +1,3 @@
-### Setup Section ###
-
 from colorama import Fore, Back, Style
 
 # Function that prints out a letter with a colorful background
@@ -52,15 +50,12 @@ def printGuessAccuracy(guess, actual):
     # Don't worry about the line of code below, it works. It just handles the transition between colors
     print(Style.RESET_ALL + " ", end="")
 
-
 # gets 6 letter word from user
 def getSixLetterInput():
   userWord = ""
   while (len(userWord) != 6) or (not userWord.isalpha()):
     userWord = input("Enter six letter word: ")
   return userWord
-
-### Main Program ###
 
 # Create title and directions
 
@@ -91,29 +86,22 @@ let's get started!
 print(title)
 print(directions)
 
-
 # Create secret word for user to guess
 secretWord = "answer"
 
 # Initialize number of guesses
 attempts = 6
 
-# While user still has guesses
+
 while attempts > 0:
-
-  # that guess will check against secret word
   userGuess = getSixLetterInput()
-
   printGuessAccuracy(userGuess, secretWord)
-  
   print()
 
   # If user wins
-
   if (userGuess == secretWord):
     print("Congratulations! You're a true wordsmith!")
     break
-
   attempts -= 1
 
   # if user loses
